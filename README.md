@@ -1,61 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🌱 1. Crear una nueva rama
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Desde tu terminal, dentro del proyecto:
 
-## About Laravel
+git checkout -b nombre-de-tu-rama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Ejemplo:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+git checkout -b feature-login
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+🔹 Esto hace dos cosas a la vez:
+1️⃣ Crea la rama feature-login.
+2️⃣ Te mueve automáticamente a esa rama.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+💾 2. Hacer cambios y guardarlos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Edita archivos, agrega código, etc.
+Luego guarda los cambios en git:
 
-## Laravel Sponsors
+git add .
+git commit -m "Agrego pantalla de login"
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+☁️ 3. Subir la nueva rama a GitHub
 
-### Premium Partners
+La primera vez que subes una rama, usa:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+git push -u origin nombre-de-tu-rama
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Ejemplo:
 
-## Code of Conduct
+git push -u origin feature-login
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+🔹 El -u guarda la relación para que en el futuro solo necesites git push.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+🔄 4. Cambiar de rama
 
-## License
+Para volver a la rama principal (main):
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+git checkout main
+
+
+Si quieres ver todas tus ramas:
+
+git branch
+
+
+La rama con asterisco * es la que tienes activa.
+
+🤝 5. Combinar cambios (merge)
+
+Cuando termines el trabajo en tu rama y quieras integrarlo en main:
+
+1️⃣ Cambia a main:
+
+git checkout main
+
+
+2️⃣ Trae los últimos cambios de GitHub por si alguien más subió cosas:
+
+git pull origin main
+
+
+3️⃣ Combina tu rama con main:
+
+git merge nombre-de-tu-rama
+
+
+Ejemplo:
+
+git merge feature-login
+
+
+4️⃣ Sube los cambios a GitHub:
+
+git push
+
+💡 Tips útiles
+
+Si quieres borrar la rama local después del merge:
+
+git branch -d nombre-de-tu-rama
+
+
+Y en remoto:
+
+git push origin --delete nombre-de-tu-rama
+
+
+Para trabajar en otra rama sin guardar tus cambios actuales:
+
+git stash
+git checkout otra-rama
+git stash pop   # para recuperar los cambios guardados
+
+🎯 Resumen rápido (la mini-chuleta)
+# Crear y cambiar
+git checkout -b nueva-rama
+
+# Subir por primera vez
+git push -u origin nueva-rama
+
+# Cambiar de rama
+git checkout main
+
+# Combinar en main
+git merge nueva-rama
+git push
